@@ -98,7 +98,7 @@ fun {lexema=yytext(); return Palavra_reservada;}
 
 
 
-("(-"{Digito}+")")|{Digito}+ {lexema=yytext(); return t_numero;}
+("(-"{Digito}+")") | ("(-"{Digito}+"."{Digito}+")") | {Digito}+ | ({Digito}+"."{Digito}+) {lexema=yytext(); return t_numero;}
 {Letra}({Letra} | {Digito})* {lexema = yytext(); return t_id;}
 
 . {return ERROR;}
