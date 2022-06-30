@@ -9,5 +9,9 @@ package analisador_lexico;
  * @author Ussumane-Momade
  */
 public enum Token {
-    t_id;
+    t_id,
+    t_bool,
+    t_verdade,
+    t_falso,
+    ERROR
 }
