@@ -13,7 +13,8 @@ import java.io.*;
 public class AnaLex {
 
     public AnaLex() {
-        String path = "D:\\github\\AnalisadorLexico\\src\\analisador_lexico\\index.sudo";
+        String basePath = System.getProperty("user.dir");
+        String path = basePath + "\\src\\analisador_lexico\\index.sudo";
         analyze(path);
     }
 
@@ -31,7 +32,7 @@ public class AnaLex {
                 }
                 switch (token) {
                     case ERROR:
-                        System.out.println("Error on line " + lexer.getLine() + "token " + token + "not recognized");
+                        System.out.println("Error on line " + lexer.getLine() + "token " + token + " not recognized");
                         System.exit(0);
                         break;
                     case t_bool:
