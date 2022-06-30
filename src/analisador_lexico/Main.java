@@ -14,7 +14,9 @@ public class Main {
 
     public static void main(String args[]) {
         String basePath = System.getProperty("user.dir");
-        String path = "D:\\github\\AnalisadorLexico\\src\\analisador_lexico\\Lexer.flex";
+        System.out.println(basePath);
+        String path = basePath + "\\src\\analisador_lexico\\Lexer.flex";
+        System.out.println(path);
         genLexer(path);
         new AnaLex();
     }
