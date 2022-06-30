@@ -64,6 +64,7 @@ public class AnaLex {
                     case t_enquanto:
                     case t_literal:
                     case t_fun:
+                        print(lexer.getLine(), token, "");break;
                     case t_numero:
                     case t_ptvirgula:
                     case t_doispontos:
@@ -85,7 +86,7 @@ public class AnaLex {
                     case t_menor:
                     case t_maiorIgual:
                     case t_menorIgual:
-                        print(lexer.getLine(), token, lexer.lexema);
+                        print(lexer.getLine(), token, lexer.lexema);break;
                     default:
                         result += "Token: " + token + "\n";
                         break;
@@ -103,7 +104,16 @@ public class AnaLex {
     }
 
     public void print(int line, Token token, String atrib) {
-        System.out.println(line + " | " + token + " | " + atrib);
+        if(atrib == ""){
+            System.out.println("<"+line+", "+token+" >");
+        }else{
+            System.out.println("<"+line+", "+token+", "+atrib+">");
+        }
+        
+    }
+    
+    public void generateTable(){
+        
     }
 
 }
