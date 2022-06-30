@@ -8,6 +8,7 @@ package analisador_lexico;
  *
  * @author Ussumane-Momade
  */
+/*bool valor = verdade -> <t_bool, bool>, <t_id, valor> <t_verdade, verdade>*/
 public enum Token {
     t_id,
     t_bool,
