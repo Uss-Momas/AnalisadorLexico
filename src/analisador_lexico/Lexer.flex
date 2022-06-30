@@ -1,20 +1,20 @@
 package analisador_lexico;
-import static analisador_lexico.Token.*; 
+import static analisador_lexico.Token.*;
 %%
-%class Lexer 
+%class Lexer
 %type Token
 %line
 %caseless
 %ignorecase
 
-/* 
+/*
 *   ALFABETO
 */
 
-Letra=[a-zA-Z]+
-
-Escape=[ ,\t, \n, \r]+
-Digito=[0-9]+
+Letra = [a-zA-Z]+
+Escape = [ ,\t, \n, \r]+
+Delimitadores = [;(){}\[\]]
+Digito = [0-9]+
 
 %{
     public String lexema;
@@ -23,14 +23,14 @@ Digito=[0-9]+
 %%
 
 /**
-**  REGRAS
+**  CARACTERES IGNORADOS
 */
 
 {Escape} {/*Ignore*/}
 "#".* {/*Ignore*/}
 
 /*
-** Tipos de dados
+** TOKENS DA LINGUAGEM
 */
 
 "bool" {return t_bool;}
