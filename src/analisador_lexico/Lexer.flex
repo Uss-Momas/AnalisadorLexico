@@ -33,29 +33,9 @@ Digito = [0-9]+
 ** TOKENS DA LINGUAGEM
 */
 
-"bool" {return t_bool;}
-"verdade" {return t_verdade;}
-"falso" {return t_falso;}
-"quebrar" {return t_qbr;}
-"caso" {return t_case;}
-"char"	{return t_char;}
-"faca"	{return t_faca;}
-"real"	{return t_real;}
-"senao"	{return t_senao;}
-"para"	{return t_para;}
-"se"	    {return t_se;}
-"inteiro"	{return t_inteiro;}
-"retorne"	{return t_retorne;}
-"escolha"	{return t_escolha;}
-"var" {return t_var;}
-"enquanto"{return t_enquanto;}
-"verdade"	{return t_verdade;}
-"falso"	{return t_falso;}
-"literal"	{return t_literal;}
-"fun" {return t_fun;}
 ";"	{return t_ptvirgula;}
 ":"	{return t_doispontos;}
-","	{return t_virgula;}"
+","	{return t_virgula;}
 "{"	{return t_Lchaveta;}
 "}"	{return t_Rchaveta;}
 "("	{return t_Lparenteses;}
@@ -72,30 +52,6 @@ Digito = [0-9]+
 "<"	{return t_menor;}
 ">="	{return t_maiorIgual;}
 "<="	{return t_menorIgual;}
-
-/**
-	PALAVRAS RESERVADAS
-*/
-
-bool |
-quebrar |
-caso |
-char |
-faca |
-real |
-senao |
-para |
-se |
-inteiro |
-retorne |
-escolha |
-var |
-enquanto |
-verdade |
-falso |
-literal |
-fun {lexema=yytext(); return Palavra_reservada;}
-
 
 
 ("(-"{Digito}+")") | ("(-"{Digito}+"."{Digito}+")") | {Digito}+ | ({Digito}+"."{Digito}+) {lexema=yytext(); return t_numero;}
