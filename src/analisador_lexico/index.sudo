@@ -1,8 +1,8 @@
-bool valor verdade
-99a
-aaa
-
-var
-
-
-
+inteiro num = 2;
+inteiro num2 = 4;
+inteiro soma = num + num2;
+real
+se (num > 5 ) {
+num2 = num2 - num;
+}
+99na
